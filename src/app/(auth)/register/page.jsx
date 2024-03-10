@@ -25,7 +25,7 @@ const Register = () => {
     try {
       setIsPainding(true)
       if(isValid){
-        const userDetails =await axios.post("http://localhost:3000/api/register",user)
+        const userDetails =await axios.post("api/register",user)
         console.log("worked")
         console.log(userDetails)
         router.push("/login")

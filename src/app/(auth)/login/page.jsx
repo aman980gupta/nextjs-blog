@@ -18,7 +18,7 @@ const Login = () => {
 
     try {
       setIsPainding(true)
-      const userDetails = await axios.post("http://localhost:3000/api/login", user)
+      const userDetails = await axios.post("api/login", user)
       console.log("Log in")
       console.log(userDetails)
       router.push("/blog")
@@ -41,7 +41,7 @@ const Login = () => {
           <input id="password" name="password" type="password" value={user.password} onChange={changeHandle} />
         </div>
 
-        <button className="p-2 bg-slate-500" >Signup</button>
+        <button className="p-2 bg-slate-500" >Login</button>
       </form>
     </div>
   )

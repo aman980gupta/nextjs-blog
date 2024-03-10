@@ -7,7 +7,7 @@ const Movies = () => {
   const [movieData, setMovieData] = useState([])
   const getMovieData = async () => {
     try {
-      const data = await axios.get("http://localhost:3000/api/movies").then(res => setMovieData(res.data))
+      const data = await axios.get("api/movies").then(res => setMovieData(res.data))
       //console.log(data)
     } catch (error) {
       throw new Error(error)
