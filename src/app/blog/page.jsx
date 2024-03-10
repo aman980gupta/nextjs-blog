@@ -1,9 +1,11 @@
 "use client"
 import axios from "axios";
-
+import { useRouter } from "next/navigation";
 const Blog = () => {
+  const router = useRouter()
   const habdleCLick = async() =>{
     const res = await axios.get("api/logout")
+    router.replace("/login")
     console.log(res)
   }
   return (
