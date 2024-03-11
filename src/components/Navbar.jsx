@@ -33,7 +33,7 @@ const Navbar = () => {
       <ul className="" >
         <div className="hidden lg:flex">
           {
-            navLinks.map(item => <li className="px-1 "> <Link key={item.titel} href={item.path}
+            navLinks.map(item => <li key={item.titel} className="px-1 "> <Link  href={item.path}
               className={`p-2 rounded-md ${pageRouteName === item.path ? "bg-[#f5f5dc] " : ""}`} >
               {item.titel}</Link></li>)
           }
