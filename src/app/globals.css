@@ -74,3 +74,8 @@ ul{
   align-items: center;
 
 }
+.logoDiv{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}

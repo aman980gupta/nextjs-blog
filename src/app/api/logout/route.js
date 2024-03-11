@@ -1,13 +1,13 @@
-import { NextResponse } from "next/server"; 
+import { NextResponse } from "next/server";
 
-const responce = NextResponse.json({
-    message: "token deleted",
-    success: true
-});
-
-export const GET =async () =>{
-    const token =await responce.cookies.get("token")
+export const GET = async () => {
+    const responce = NextResponse.json({
+        message: "token deleted",
+        success: true,
+    });
+    const token = await responce.cookies.get("token")
     console.log(token)
-    await responce.cookies.set("token","", {expiresIn:new Date()})
+
+    await responce.cookies.set("token", "", { expiresIn: new Date(0) })
     return responce
 }

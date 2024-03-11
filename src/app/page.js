@@ -1,9 +1,12 @@
+"use client"
 const Home = () => {
 
+  const signIn = ()=> {
   
+  }
 
   return (
-    <div >page</div>
+    <div onClick={signIn} >page</div>
   )
 }
 
