@@ -1,6 +1,8 @@
 "use client"
+import { FaBars } from "react-icons/fa6";
 import Link from "next/link"
 import { usePathname } from "next/navigation";
+import styles from "./navbar.module.css"
 
 const Navbar = () => {
   const isLogin = false;
@@ -30,17 +32,23 @@ const Navbar = () => {
       <div className="logoDiv">
         <li className="px-7 flex items-center  "> <Link href="/">Logo</Link></li>
       </div>
-      <ul className="" >
+      <div className={styles.secDiv}>
+        <div className="flex items-center md:hidden">
+
+      <FaBars/>
+        </div>
+      <ul className="hidden md:flex" >
         <div className="hidden lg:flex">
           {
             navLinks.map(item => <li key={item.titel} className="px-1 "> <Link  href={item.path}
-              className={`p-2 rounded-md ${pageRouteName === item.path ? "bg-[#f5f5dc] " : ""}`} >
+            className={`p-2 rounded-md ${pageRouteName === item.path ? "bg-[#f5f5dc] " : ""}`} >
               {item.titel}</Link></li>)
           }
         </div>
 
         {isLogin ? <LogoutAndAdmin /> : <LoginAndSIghnup />}
       </ul>
+          </div>
 
     </nav>
   )
